@@ -1,21 +1,18 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package se;
 
-import java.util.ArrayList;
-
-/**
- *
- * @author i255
- */
 public class GiangVien {
     private String hoTen;
     private String chucDanh;
     private String chuyenNganh;
     private String donVi;
-    private ArrayList<MonHoc> monGiangDay;
+
+    public GiangVien(String hoTen, String chucDanh, String chuyenNganh, String donVi) {
+        this.hoTen = hoTen;
+        this.chucDanh = chucDanh;
+        this.chuyenNganh = chuyenNganh;
+        this.donVi = donVi;
+    }
 
     public void setHoTen(String hoTen) {
         this.hoTen = hoTen;
@@ -33,10 +30,6 @@ public class GiangVien {
         this.donVi = donVi;
     }
 
-    public void setMonGiangDay(ArrayList<MonHoc> monGiangDay) {
-        this.monGiangDay = monGiangDay;
-    }
-
     public String getHoTen() {
         return hoTen;
     }
@@ -52,10 +45,5 @@ public class GiangVien {
     public String getDonVi() {
         return donVi;
     }
-
-    public ArrayList<MonHoc> getMonGiangDay() {
-        return monGiangDay;
-    }
-    
    
 }
