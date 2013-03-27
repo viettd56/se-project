@@ -4,25 +4,21 @@
  */
 package se;
 
-import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  *
  * 
  */
-public class Monhoc implements Serializable {
+public class MonHoc{
     private String tenMonHoc;   //ten mon hoc
     private String maMonHoc;    //ma mon hoc
     private int soTinChi, gioLyThuyet, gioThucHanh, gioTuHoc;       //so tin chi cua mon hoc
     private String loaiMonHoc;    //loai cua mon hoc
     private String monTienQuyet;  //ma mon hoc dieu kien tien quyet
-    private boolean dieuKien;     //kiem tra dieu kien bat buoc cua mon hoc
-    ArrayList<Monhoc> arrayMonHocs;       
-    private int demMH = 0;
+    private boolean dieuKien;     //kiem tra dieu kien bat buoc hay tu chon cua mon hoc       
     
 	//constructor non arguments
-    public Monhoc()
+    public MonHoc()
     {
         tenMonHoc = "";
         maMonHoc = "";
@@ -32,48 +28,48 @@ public class Monhoc implements Serializable {
     }//end method
     
     //constructor with arguments
-    public Monhoc(String ten,String ma,int tinchi,int lythuyet,int thuchanh,
-                int tuhoc,String loaimh,String montq)
+    public MonHoc(String tenMonHoc,String maMonHoc,int soTinChi,int gioLyThuyet,int gioThucHanh,
+                int gioTuHoc,String loaiMonHoc,String monTienQuyet)
     {
-        tenMonHoc = ten;
-        maMonHoc = ma;
-        soTinChi = tinchi;
-        gioThucHanh = thuchanh;
-        gioLyThuyet = lythuyet;
-        gioTuHoc = tuhoc;
-        loaiMonHoc = loaimh;
-        monTienQuyet = montq;
+        this.tenMonHoc = tenMonHoc;
+        this.maMonHoc = maMonHoc;
+        this.soTinChi = soTinChi;
+        this.gioThucHanh = gioThucHanh;
+        this.gioLyThuyet = gioLyThuyet;
+        this.gioTuHoc = gioTuHoc;
+        this.loaiMonHoc = loaiMonHoc;
+        this.monTienQuyet = monTienQuyet;
         
     }//end constructor
     
-    //method setName
-    public void setName(String tenMonHoc)
+    //method setTenMonHoc
+    public void setTenMonHoc(String tenMonHoc)
     {
         this.tenMonHoc = tenMonHoc;
     }//end method
     
-    //method getName 
-    public String getName()
+    //method getTenMonHoc 
+    public String getTenMonHoc()
     {
         return tenMonHoc;
     }//end method
     
-    //method setCode
-    public void setCode(String maMonHoc)
+    //method setMaMonHoc
+    public void setMaMonHoc(String maMonHoc)
     {
         this.maMonHoc = maMonHoc; 
     }//end method
     
-    //method getCode
-    public String getCode()
+    //method getMaMonHoc
+    public String getMaMonHoc()
     {
         return maMonHoc;
     }//end method
     
-    //method setNumber
-    public void setNumber(int soTinChi,int gioLyThuyet,int gioThucHanh,int gioTuHoc)
+    //method setTinChi
+    public void setTinChi(int soTinChi,int gioLyThuyet,int gioThucHanh,int gioTuHoc)
     {
-        if(checkNumber(soTinChi, gioLyThuyet, gioThucHanh, gioTuHoc) == true)
+        if(checkTinChi(soTinChi, gioLyThuyet, gioThucHanh, gioTuHoc) == true)
         {
             this.soTinChi = soTinChi;
             this.gioLyThuyet = gioLyThuyet;
@@ -82,83 +78,70 @@ public class Monhoc implements Serializable {
         }
     }//end method
     
-    //method getNumber
-    public int getNumberTc()
+    //method getSoTinChi
+    public int getSoTinChi()
     {
         return soTinChi;
     }//end method
     
-    //method getNumberLt
-    public int getNumberLt()
+    //method getLyThuyet
+    public int getLyThuyet()
     {
         return gioLyThuyet;
     }//end method
     
-    //method getNumberThh
-    public int getnumberThh()
+    //method getThucHanh
+    public int getThucHanh()
     {
         return gioThucHanh;
     }//end method
     
-    //method getNumberTh
-    public int getNumberTh()
+    //method getTuHoc
+    public int getTuHoc()
     {
         return gioTuHoc;
     }//end method
-    //method setType
-    public void setType(String loaiMonHoc)
+    //method setLoaiMonHoc
+    public void setLoaiMonHoc(String loaiMonHoc)
     {
         this.loaiMonHoc = loaiMonHoc;
     }
-    //method getType
-    public String getType()
+    //method getLoaiMonHoc
+    public String getLoaiMonHoc()
     {
         return loaiMonHoc;
     }//end method
     
-    //method setTq
-    public void setTq(String monTienQuyet)
+    //method setMonTienQuyet
+    public void setMonTienQuyet(String monTienQuyet)
     {
         this.monTienQuyet = monTienQuyet;
     }
-    //method getTq
-    public String getTq()
+    //method getMonTienQuyet
+    public String getMonTienQuyet()
     {
         return monTienQuyet;
     }//end method
     
-    //method checkNumber ( kiểm tra hợp lệ của các đối )
-    public boolean checkNumber(int soTinChi,int gioLyThuyet,int gioThucHanh,int gioTuHoc)
+    //method checkTinChi ( kiểm tra hợp lệ của các đối )
+    public boolean checkTinChi(int soTinChi,int gioLyThuyet,int gioThucHanh,int gioTuHoc)
     {
         if(soTinChi*15 == gioLyThuyet + gioThucHanh + gioTuHoc)
             return true;
         else 
             return false;
-    }
-    
-    //Overriding toString
-    public String toString(){
-        StringBuffer buffer = new StringBuffer();
-        buffer.append("\n");
-        buffer.append(tenMonHoc);
-        buffer.append("\t");
-        buffer.append(maMonHoc);
-        buffer.append("\t");
-        buffer.append(soTinChi);
-        buffer.append("\t");
-        buffer.append(gioLyThuyet);
-        buffer.append("\t");
-        buffer.append(gioThucHanh);
-        buffer.append("\t");
-        buffer.append(gioTuHoc);
-        buffer.append("\t");
-        buffer.append(loaiMonHoc);
-        buffer.append("\t");
-        buffer.append(monTienQuyet);
-        buffer.append("\t");
-        buffer.append(dieuKien);
-        buffer.append("\t");
-        
-        return buffer.toString();
-    }
+    }//end method
+	
+	//method setDieuKien ( true = bat buoc; false = tu chon )
+	public void setDieuKien(boolean dieuKien)
+	{
+		this.dieuKien = dieuKien;
+	}//end method
+	
+	//method getDieuKien
+	public boolean getDieuKien()
+	{
+		return dieuKien;
+	}//end method
 }
+
