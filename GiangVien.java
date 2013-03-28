@@ -8,14 +8,14 @@ public class GiangVien {
     private String donVi;
 
     public GiangVien(String hoTen, String chucDanh, String chuyenNganh, String donVi) {
-        this.hoTen = hoTen;
+        this.hoTen = Util.chuanHoaTenGV(hoTen);
         this.chucDanh = chucDanh;
         this.chuyenNganh = chuyenNganh;
         this.donVi = donVi;
     }
 
     public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+        this.hoTen = Util.chuanHoaTenGV(hoTen);
     }
 
     public void setChucDanh(String chucDanh) {
