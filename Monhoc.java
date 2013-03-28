@@ -33,10 +33,7 @@ public class MonHoc{
     {
         this.tenMonHoc = tenMonHoc;
         this.maMonHoc = maMonHoc;
-        this.soTinChi = soTinChi;
-        this.gioThucHanh = gioThucHanh;
-        this.gioLyThuyet = gioLyThuyet;
-        this.gioTuHoc = gioTuHoc;
+        setTinChi(soTinChi,gioLyThuyet,gioThucHanh,gioTuHoc);
         this.loaiMonHoc = loaiMonHoc;
         this.monTienQuyet = monTienQuyet;
         
