@@ -11,11 +11,6 @@ package user;
 public class User {
     private String userName;
     private String pass;
-   
-    public User(){
-        userName = "admin";
-        pass = "admin";
-    }
     
     public User(String userName1, String pass1){
         userName = userName1;
