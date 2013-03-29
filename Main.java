@@ -36,9 +36,10 @@ public class Main {
             File file = new File("dataMonHoc");
             fileOutputStream = new FileOutputStream(file);
             objectOutputStream = new ObjectOutputStream(fileOutputStream);
-            objectOutputStream.writeInt(arrayMonHocs.size());
+            objectOutputStream.writeInt(arrayMonHocs.size()); //ghi so luong phan tu
+			
             for (MonHoc temp : arrayMonHocs) {
-                objectOutputStream.writeObject(temp);
+                objectOutputStream.writeObject(temp); //ghi cac doi tuong 
             }
             objectOutputStream.close();
 
@@ -100,7 +101,7 @@ public class Main {
 
             String maMonHoc = null;
             String tenMonHoc = null;
-            int size = objectInputStream.readInt();
+            int size = objectInputStream.readInt(); // doc so luong phan tu co trong file
             for (int i = 0; i < size; i++) {
                 obj = objectInputStream.readObject();
                 if (obj instanceof MonHoc) {
@@ -108,6 +109,7 @@ public class Main {
                     maMonHoc = objMonHoc.getMaMonHoc();
                     tenMonHoc = objMonHoc.getTenMonHoc();
 
+					//add doi tuong vao cac thanh phan
                     arrayMonHocs.add(objMonHoc);
                     arrayTenMonHocs.add(tenMonHoc);
                     arrayMaMonHocs.add(maMonHoc);
